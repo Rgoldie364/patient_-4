@@ -1,8 +1,0 @@
-PRS Version 1
-Release: 1.0.0
-Date: 2026-10-29
-
-Initial complete PRS implementation based on the supplied requirements and
-architecture attachments. This is a separate project from previous standalone
-patient-management exercises. Preserve this release; develop later versions in
-separate folders and use separate database files.
