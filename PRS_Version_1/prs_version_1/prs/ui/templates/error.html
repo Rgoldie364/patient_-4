@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section class="card"><p class="eyebrow">PLEASE CHECK</p><h1>{{ message }}</h1><p>The requested operation was not confirmed. Use your browser’s Back button to review your input.</p><a href="{{ url_for('home') }}">Return to patient lookup</a> · <a href="{{ url_for('login') }}">Staff sign in</a></section>{% endblock %}

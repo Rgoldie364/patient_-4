@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="{{ session.get('csrf','') }}">
+<title>{% block title %}Patient Record System{% endblock %} · PRS v1</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+<script defer src="{{ url_for('static',filename='app.js') }}"></script></head>
+<body><header><a class="brand" href="{{ url_for('home') }}"><span class="logo">+</span> PRS <span class="version">VERSION 1</span></a>
+{% if staff %}<div class="account"><span>{{ staff.username }} · {{ staff.role }}</span><form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ session.csrf }}"><button class="secondary">Sign out</button></form></div>{% endif %}</header>
+<div class="notice">CLASSROOM DEMONSTRATION · SYNTHETIC PATIENT INFORMATION ONLY</div>
+<main>{% for message in get_flashed_messages() %}<div class="flash" role="status">{{ message }}</div>{% endfor %}{% block content %}{% endblock %}</main>
+<footer>Patient Record System · v1.0.0 · Records persist on this computer.</footer></body></html>

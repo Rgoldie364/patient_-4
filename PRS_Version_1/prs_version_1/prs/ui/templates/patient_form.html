@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block content %}<a href="{{ url_for('patient_detail',patient_id=patient.patient_id) if patient else url_for('home') }}">← Back</a><h1>{{ 'Update patient information' if patient else 'Create a patient' }}</h1>
+{% if patient %}<p>Permanent ID: <code>{{ patient.patient_id }}</code></p>{% endif %}
+<section class="card"><form method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}">{% if patient %}<input type="hidden" name="version" value="{{ patient.version }}">{% endif %}
+<div class="grid"><label>Full name (required)<input name="name" value="{{ patient.name if patient else '' }}" maxlength="120" required></label>
+<label>Date of birth<input type="date" name="date_of_birth" max="{{ today }}" value="{{ patient.date_of_birth or '' if patient else '' }}"></label>
+<label>Email<input type="email" name="email" maxlength="254" value="{{ patient.email if patient else '' }}"></label>
+<label>Phone<input type="tel" name="phone" maxlength="40" value="{{ patient.phone if patient else '' }}"></label></div>
+<label>Address<textarea name="address" maxlength="300" rows="2">{{ patient.address if patient else '' }}</textarea></label>
+<p class="muted">Only the name is required. Use fictional details. Patient IDs cannot be changed.</p><button>{{ 'Save changes' if patient else 'Create patient' }}</button></form></section>{% endblock %}
