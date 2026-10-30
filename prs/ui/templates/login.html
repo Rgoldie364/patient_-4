@@ -1,6 +1,0 @@
-{% extends 'base.html' %}{% block title %}Staff sign in{% endblock %}
-{% block content %}<section class="card login"><p class="eyebrow">STAFF ACCESS</p><h1>Welcome to PRS</h1><p>Sign in to manage patient records and visit notes.</p>
-<form method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}">
-<label>Username<input name="username" autocomplete="username" required maxlength="50" autofocus></label>
-<label>Password<input type="password" name="password" autocomplete="current-password" required maxlength="256"></label>
-<button>Sign in</button></form><p class="muted">Use an account created with the setup command in README.md.</p></section>{% endblock %}
