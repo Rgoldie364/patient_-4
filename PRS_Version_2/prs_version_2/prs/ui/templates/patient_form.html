@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{{ url_for('patients.patient_detail', patient_id=patient.patient_id) if patient else url_for('patients.home') }}">← Back</a>
+<h1>{{ 'Update patient information' if patient else 'Create a patient' }}</h1>
+{% if patient %}<p>Permanent ID: <code>{{ patient.patient_id }}</code></p>{% endif %}
+{% if error %}<div class="flash error" role="alert">{{ error }}</div>{% endif %}
+<section class="card">
+  <form method="post">
+    <input type="hidden" name="csrf" value="{{ session.csrf }}">
+    {% if patient %}<input type="hidden" name="version" value="{{ form_version|default(patient.version) }}">{% endif %}
+    <div class="grid">
+      <label>Full name (required)<input name="name" value="{{ values.name|default('') }}" maxlength="120" required></label>
+      <label>Date of birth (required)<input type="date" name="date_of_birth" max="{{ today }}" value="{{ values.date_of_birth|default('') }}" required></label>
+      <label>Email<input type="email" name="email" maxlength="254" value="{{ values.email|default('') }}" aria-describedby="contact-help"></label>
+      <label>Phone<input type="tel" name="phone" maxlength="40" value="{{ values.phone|default('') }}" aria-describedby="contact-help"></label>
+    </div>
+    <p id="contact-help" class="muted">Provide at least one contact method: email or phone. You may provide both.</p>
+    <label>Address<textarea name="address" maxlength="300" rows="2">{{ values.address|default('') }}</textarea></label>
+    <p class="muted">Use fictional details. Patient IDs cannot be changed.</p>
+    <button>{{ 'Save changes' if patient else 'Create patient' }}</button>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,51 @@
+test_hard_wall_clock_deadline (test_prs.AdapterTests.test_hard_wall_clock_deadline) ... ok
+test_ollama_payload_and_strict_output (test_prs.AdapterTests.test_ollama_payload_and_strict_output) ... ok
+test_remote_provider_not_permitted (test_prs.AdapterTests.test_remote_provider_not_permitted) ... ok
+test_stuck_workers_are_bounded (test_prs.AdapterTests.test_stuck_workers_are_bounded) ... ok
+test_authentication_and_logout (test_prs.CoreTests.test_authentication_and_logout) ... ok
+test_concurrent_patient_update_rejected (test_prs.CoreTests.test_concurrent_patient_update_rejected) ... ok
+test_foreign_key_rejects_orphan (test_prs.CoreTests.test_foreign_key_rejects_orphan) ... ok
+test_forged_token_expiry_and_deactivated_account (test_prs.CoreTests.test_forged_token_expiry_and_deactivated_account) ... ok
+test_history_sorted_and_isolated (test_prs.CoreTests.test_history_sorted_and_isolated) ... ok
+test_ids_unique_and_immutable (test_prs.CoreTests.test_ids_unique_and_immutable) ... ok
+test_lookup_performance_and_sql_injection (test_prs.CoreTests.test_lookup_performance_and_sql_injection) ... ok
+test_missing_patient_no_mutation (test_prs.CoreTests.test_missing_patient_no_mutation) ... ok
+test_note_validation_and_patient_link (test_prs.CoreTests.test_note_validation_and_patient_link) ... ok
+test_password_hash_and_login_throttle (test_prs.CoreTests.test_password_hash_and_login_throttle) ... ok
+test_patient_update_and_audit (test_prs.CoreTests.test_patient_update_and_audit) ... ok
+test_patient_validation (test_prs.CoreTests.test_patient_validation) ... ok
+test_rejection_and_manual_categories (test_prs.CoreTests.test_rejection_and_manual_categories) ... ok
+test_restart_persistence_and_pending_suggestion_expiry (test_prs.CoreTests.test_restart_persistence_and_pending_suggestion_expiry) ... ok
+test_save_does_not_call_ai (test_prs.CoreTests.test_save_does_not_call_ai) ... ok
+test_suggestion_not_persisted_until_acceptance (test_prs.CoreTests.test_suggestion_not_persisted_until_acceptance) ... ok
+test_uncertain_error_timeout_and_late_response (test_prs.CoreTests.test_uncertain_error_timeout_and_late_response) ... AI provider unavailable (ConnectionError)
+ok
+test_viewer_can_read_but_cannot_write (test_prs.CoreTests.test_viewer_can_read_but_cannot_write) ... ok
+test_wrong_staff_wrong_note_and_stale_suggestion (test_prs.CoreTests.test_wrong_staff_wrong_note_and_stale_suggestion) ... ok
+test_csrf_and_auth_guards (test_prs.WebTests.test_csrf_and_auth_guards) ... ok
+test_web_full_workflow_and_escaped_content (test_prs.WebTests.test_web_full_workflow_and_escaped_content) ... ok
+test_admin_cannot_read_or_edit_patient_records (test_v2.AdminWorkflowTests.test_admin_cannot_read_or_edit_patient_records) ... ok
+test_admin_creates_both_roles_through_web_and_accounts_survive_restart (test_v2.AdminWorkflowTests.test_admin_creates_both_roles_through_web_and_accounts_survive_restart) ... ok
+test_admin_csrf_and_unauthenticated_requests_rejected (test_v2.AdminWorkflowTests.test_admin_csrf_and_unauthenticated_requests_rejected) ... ok
+test_invalid_role_duplicate_username_and_passwords (test_v2.AdminWorkflowTests.test_invalid_role_duplicate_username_and_passwords) ... ok
+test_new_patient_ui_validation_preserves_input (test_v2.AdminWorkflowTests.test_new_patient_ui_validation_preserves_input) ... ok
+test_nonadmin_denied_on_route_and_service (test_v2.AdminWorkflowTests.test_nonadmin_denied_on_route_and_service) ... ok
+test_collision_retries_without_duplicate_rows_or_audit (test_v2.PatientFixTests.test_collision_retries_without_duplicate_rows_or_audit) ... ok
+test_dob_missing_blank_invalid_and_future_rejected (test_v2.PatientFixTests.test_dob_missing_blank_invalid_and_future_rejected) ... ok
+test_domain_and_database_enforce_required_fields (test_v2.PatientFixTests.test_domain_and_database_enforce_required_fields) ... ok
+test_email_only_phone_only_and_both_accepted (test_v2.PatientFixTests.test_email_only_phone_only_and_both_accepted) ... ok
+test_neither_contact_or_invalid_supplied_contact_rejected (test_v2.PatientFixTests.test_neither_contact_or_invalid_supplied_contact_rejected) ... ok
+test_patient_detail_fetches_patient_once (test_v2.PatientFixTests.test_patient_detail_fetches_patient_once) ... ok
+test_persistent_collision_is_bounded (test_v2.PatientFixTests.test_persistent_collision_is_bounded) ... ok
+test_unrelated_integrity_error_is_not_retried (test_v2.PatientFixTests.test_unrelated_integrity_error_is_not_retried) ... ok
+test_update_cannot_clear_dob_or_last_contact (test_v2.PatientFixTests.test_update_cannot_clear_dob_or_last_contact) ... ok
+test_version_1_database_refused_without_schema_changes (test_v2.PatientFixTests.test_version_1_database_refused_without_schema_changes) ... ok
+test_acceptance_database_failure_preserves_suggestion_for_retry (test_v2.SuggestionFixTests.test_acceptance_database_failure_preserves_suggestion_for_retry) ... ok
+test_provider_errors_are_logged_without_note_text (test_v2.SuggestionFixTests.test_provider_errors_are_logged_without_note_text) ... ok
+test_rejection_database_failure_preserves_suggestion_for_retry (test_v2.SuggestionFixTests.test_rejection_database_failure_preserves_suggestion_for_retry) ... ok
+test_reserved_suggestion_blocks_other_review_and_expiry_applies (test_v2.SuggestionFixTests.test_reserved_suggestion_blocks_other_review_and_expiry_applies) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 25.399s
+
+OK

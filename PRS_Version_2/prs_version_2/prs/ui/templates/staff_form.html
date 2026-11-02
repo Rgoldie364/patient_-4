@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Create staff account{% endblock %}
+{% block content %}
+<p class="eyebrow">ADMINISTRATION</p>
+<h1>Create a staff account</h1>
+<p>Add a clinic-approved doctor or nurse. Your administrator account manages staff access.</p>
+{% if error %}<div class="flash error" role="alert">{{ error }}</div>{% endif %}
+<section class="card">
+  <form method="post">
+    <input type="hidden" name="csrf" value="{{ session.csrf }}">
+    <div class="grid">
+      <label>Username<input name="username" value="{{ username }}" minlength="3" maxlength="50" pattern="[A-Za-z0-9_.\-]+" autocomplete="off" required></label>
+      <label>Role<select name="role" required>
+        <option value="doctor" {% if selected_role == 'doctor' %}selected{% endif %}>Doctor</option>
+        <option value="nurse" {% if selected_role == 'nurse' %}selected{% endif %}>Nurse</option>
+      </select></label>
+      <label>Password<input name="password" type="password" minlength="12" maxlength="256" autocomplete="new-password" required></label>
+      <label>Confirm password<input name="confirm_password" type="password" minlength="12" maxlength="256" autocomplete="new-password" required></label>
+    </div>
+    <p class="muted">Use at least 12 characters. Passwords are stored as salted hashes and are not displayed again.</p>
+    <button>Create account</button>
+  </form>
+</section>
+{% endblock %}

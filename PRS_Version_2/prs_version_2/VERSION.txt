@@ -1,0 +1,9 @@
+PRS Version 2
+Release: 2.0.0
+Date: 2026-11-01
+
+Separate revision of PRS Version 1. Adds bounded Patient ID collision retries,
+required date of birth and at least one contact method, admin-only doctor/nurse
+creation through the UI, modular routes, optimized record reads, structured AI
+error handling, and retry-safe suggestion review. Version 1 is preserved.
+Default database: data/prs_v2.sqlite3 (schema version 2).
